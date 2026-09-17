@@ -1,3 +1,5 @@
+from effects.base import ffmpeg_effect
+
 class effect_dramatic_black_and_white(ffmpeg_effect):
     name = "dramatic_bw"
     description = "Transforms the scene into an overly serious monochrome sequence."
