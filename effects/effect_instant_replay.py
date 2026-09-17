@@ -1,3 +1,5 @@
+from effects.base import ffmpeg_effect
+
 class effect_instant_replay(ffmpeg_effect):
     name = "instant_replay"
     description = "Creates a dramatic replay of an event."
