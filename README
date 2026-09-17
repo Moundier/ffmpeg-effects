@@ -1,0 +1,74 @@
+Todo
+
+* Generate videos directly from images or raw image bytes
+  * Load images directly into NumPy arrays
+  * Generate video frames entirely in memory
+  * Encode frames directly into MP4 without saving intermediate images
+  * Support PNG, JPEG, and raw byte buffers
+
+* Apply Perlin noise repeatedly to an image
+  * Add animated Perlin noise to pixel brightness
+  * Use `noise(x, y, t)` for temporally continuous noise
+  * Experiment with different noise scales
+  * Experiment with octaves, persistence, and lacunarity
+  * Control noise strength over time
+
+* Use Perlin noise for image displacement
+  * Generate X/Y displacement fields
+  * Warp pixels according to the noise field
+  * Use OpenCV `remap()` for efficient image deformation
+  * Experiment with different displacement strengths
+  * Create flowing or melting-face effects
+
+* Apply noise to individual visual properties
+  * Brightness
+  * Contrast
+  * Saturation
+  * Hue
+  * Individual RGB channels
+  * Blur/sharpness
+  * Transparency
+
+* Combine multiple noise fields
+  * Independent X and Y displacement
+  * Different frequencies for different effects
+  * Layer multiple Perlin noise octaves
+  * Combine Perlin noise with Simplex noise
+  * Use separate noise fields for color and geometry
+
+* Create temporal effects
+  * Slowly evolve the noise field
+  * Increase and decrease distortion over time
+  * Create periodic noise animations
+  * Synchronize distortion with audio
+  * Create transitions between original and heavily distorted frames
+
+* Experiment with face-specific effects
+  * Distort only the face region
+  * Keep the background stable
+  * Apply stronger noise around facial contours
+  * Use facial landmarks as distortion anchors
+  * Create localized melting or fluid effects
+
+* Optimize frame generation
+  * Vectorize operations with NumPy
+  * Avoid per-pixel Python loops
+  * Use OpenCV for fast remapping
+  * Benchmark different noise implementations
+  * Experiment with GPU acceleration
+
+* Experiment with different video outputs
+  * MP4
+  * WebM
+  * GIF
+  * Different resolutions
+  * Different frame rates
+  * Different codecs and compression levels
+
+* Build a reusable pipeline
+  * `image_bytes -> NumPy -> noise -> transformation -> frame -> video`
+  * Separate noise generation from image transformation
+  * Make effects configurable
+  * Support multiple effects in a single pipeline
+  * Export animation parameters alongside the generated video
+
